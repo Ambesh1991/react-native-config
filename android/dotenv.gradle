@@ -35,7 +35,7 @@ def readDotEnv = {
 
         // use startsWith because sometimes the task is "generateDebugSources", so we want to match "debug"
         project.ext.envConfigFiles.any { pair ->
-            if (flavor.startsWith(pair.key)) {
+            if (flavor.equals(pair.key)) {
                 envFile = pair.value
                 return true
             }
